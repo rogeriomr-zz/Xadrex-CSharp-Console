@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using xadrez_console.Tabuleiro.Enum;
+﻿using xadrez_console.Tabuleiro.Enum;
 
 namespace xadrez_console.Tabuleiro
 {
@@ -12,9 +9,9 @@ namespace xadrez_console.Tabuleiro
         public int QtdMovimentos { get; protected set; }
         public Tab Tab { get; set; }
 
-        public Peca(Posicao posicao, Cor cor, Tab tab)
+        public Peca(Tab tab, Cor cor)
         {
-            Posicao = posicao;
+            Posicao = null;
             Cor = cor;
             QtdMovimentos = 0;
             Tab = tab;
