@@ -1,6 +1,7 @@
 ﻿using System;
 using xadrez_console.Tabuleiro;
 using xadrez_console.Tabuleiro.Enum;
+using xadrez_console.Tabuleiro.Exceptions;
 using xadrez_console.Xadrez;
 
 namespace xadrez_console
@@ -9,15 +10,23 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            Tab Tab = new Tab(8, 8);
+            try
+            {
+                Tab Tab = new Tab(8, 8);
 
-            Tab.ColocarPeca(new Torre(Tab, Cor.Preta), new Posicao(0, 0));
-            Tab.ColocarPeca(new Torre(Tab, Cor.Preta), new Posicao(1, 2));
-            Tab.ColocarPeca(new Rei(Tab, Cor.Preta), new Posicao(2, 4));
+                Tab.ColocarPeca(new Torre(Tab, Cor.Preta), new Posicao(0, 0));
+                Tab.ColocarPeca(new Torre(Tab, Cor.Preta), new Posicao(1, 9));
+                Tab.ColocarPeca(new Rei(Tab, Cor.Preta), new Posicao(0, 2));
 
-            Tela.ImprimirTabuleiro(Tab);
+                Tela.ImprimirTabuleiro(Tab);
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
+            catch (TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
         }
     }
 }
