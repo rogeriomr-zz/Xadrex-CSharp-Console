@@ -13,7 +13,7 @@ namespace xadrez_console.Xadrez
             Linha = linha;
         }
 
-        public Posicao ToPposicao()
+        public Posicao ToPosicao()
         {
             return new Posicao(8 - Linha, Coluna - 'a');
         }
