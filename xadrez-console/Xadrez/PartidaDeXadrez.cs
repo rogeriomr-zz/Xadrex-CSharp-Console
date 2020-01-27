@@ -108,7 +108,7 @@ namespace xadrez_console.Xadrez
             {
                 throw new TabuleiroException("Não existe essa posição no tabuleiro!");
             }
-            if (!Tab.Peca(origem).PodeMoverPara(destino))
+            if (!Tab.Peca(origem).MovimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posição de destino inválida!");
             }
